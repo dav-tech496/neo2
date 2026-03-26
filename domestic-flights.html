@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domestic Flights – Neo Gallant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1a6b3a; --green-light: #2d9b57; --green-dark: #0f4525;
+      --orange: #f47b20; --orange-dark: #c45e10;
+      --cream: #fdf8f3; --text: #1a1a1a; --text-muted: #666;
+      --card: #ffffff; --shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(10,40,20,0.95); backdrop-filter: blur(12px);
+      height: 70px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: white; text-decoration: none; font-size: 0.9rem; font-weight: 700;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 18px; border-radius: 25px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(255,255,255,0.22); }
+    .nav-right a {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: white; text-decoration: none; font-weight: 700; font-size: 0.9rem;
+      background: rgba(244,123,32,0.18);
+      border: 1px solid rgba(244,123,32,0.35);
+      padding: 8px 16px; border-radius: 25px;
+    }
+
+    .hero {
+      height: 320px; position: relative; display:flex; align-items:flex-end;
+      padding: 0 6% 2.5rem; margin-top: 70px; overflow:hidden;
+    }
+    .hero img.bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .hero-overlay { position:absolute; inset:0; background: linear-gradient(to top, rgba(10,40,20,0.88) 0%, rgba(0,0,0,0.25) 100%); }
+    .hero-text { position:relative; z-index:2; }
+    .hero-text h1 { font-family:'Playfair Display',serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: white; }
+    .hero-text p { color: rgba(255,255,255,0.78); margin-top: 0.5rem; font-size: 1rem; max-width: 62ch; line-height: 1.6; }
+
+    .content { padding: 3rem 6% 5rem; max-width: 1200px; margin: 0 auto; }
+    .section-head { display:flex; align-items:flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.3rem; }
+    .section-head h2 { font-family:'Playfair Display',serif; font-size: 1.8rem; font-weight: 900; color: var(--green-dark); }
+    .section-head .hint { color: var(--text-muted); font-size: 0.95rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card { background: var(--card); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+    .card-body { padding: 1.2rem; }
+    .card h3 { font-size: 1.05rem; font-weight: 900; margin-bottom: 0.35rem; }
+    .card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    .pill-row { display:flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.9rem; }
+    .pill { display:inline-flex; align-items:center; gap: 8px; background:#e8f5ee; color:var(--green-dark); padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; font-weight: 700; }
+
+    .cta {
+      margin-top: 2.2rem;
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      border-radius: 18px; padding: 1.8rem; color: white;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    }
+    .cta h3 { font-family:'Playfair Display',serif; font-size: 1.35rem; font-weight: 900; }
+    .cta p { opacity: 0.85; line-height: 1.7; max-width: 70ch; }
+    .cta a {
+      display:inline-flex; align-items:center; gap: 10px;
+      background: var(--orange); color: white; text-decoration: none;
+      padding: 12px 20px; border-radius: 999px; font-weight: 900;
+    }
+    .cta a:hover { background: var(--orange-dark); }
+
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="back-btn" href="travel-agency.html#air">&#8592; Back to Air Tickets</a>
+    <div class="nav-right">
+      <a href="tel:09442271234">&#128222; 09442271234</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img class="bg" src="https://images.unsplash.com/photo-1521727857535-28d2048d8b02?w=1600&q=80" alt="Domestic flights">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>&#128747; Domestic Flights</h1>
+      <p>Example layout: airlines first, then destinations. Replace/adjust anything later to match your real partners and routes.</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-head">
+      <h2>Available Airlines (Example)</h2>
+      <div class="hint">Put your real airline list here later</div>
+    </div>
+    <div class="grid" style="margin-bottom:2.5rem">
+      <div class="card"><div class="card-body"><h3>Myanmar Airways</h3><p>Domestic network, common routes, flexible booking support.</p></div></div>
+      <div class="card"><div class="card-body"><h3>Mann Yadanarpon Airlines</h3><p>Popular domestic routes and seasonal schedules.</p></div></div>
+      <div class="card"><div class="card-body"><h3>Air KBZ</h3><p>Domestic routes and connections across Myanmar.</p></div></div>
+    </div>
+
+    <div class="section-head">
+      <h2>Destinations (Example)</h2>
+      <div class="hint">You can replace with your tour places later</div>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="card-body"><h3>Yangon</h3><p>Gateway city, shopping, pagodas, city tours.</p><div class="pill-row"><span class="pill">&#128205; City</span><span class="pill">&#9201; 1-2 days</span></div></div></div>
+      <div class="card"><div class="card-body"><h3>Mandalay</h3><p>Cultural sites, day trips, royal history, nearby attractions.</p><div class="pill-row"><span class="pill">&#127963; Culture</span><span class="pill">&#9201; 2-3 days</span></div></div></div>
+      <div class="card"><div class="card-body"><h3>Bagan</h3><p>Sunrise temples, e-bike tours, balloon season (example).</p><div class="pill-row"><span class="pill">&#127748; Sunrise</span><span class="pill">&#9201; 2-3 days</span></div></div></div>
+      <div class="card"><div class="card-body"><h3>Heho / Inle</h3><p>Lake experience, villages, calm relaxing days.</p><div class="pill-row"><span class="pill">&#127966; Nature</span><span class="pill">&#9201; 2-4 days</span></div></div></div>
+      <div class="card"><div class="card-body"><h3>Ngapali</h3><p>Beach getaway and resort stays (seasonal).</p><div class="pill-row"><span class="pill">&#127958; Beach</span><span class="pill">&#9201; 3-5 days</span></div></div></div>
+      <div class="card"><div class="card-body"><h3>Nay Pyi Taw</h3><p>Business trips, events, quick visits (example).</p><div class="pill-row"><span class="pill">&#128188; Business</span><span class="pill">&#9201; 1-2 days</span></div></div></div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <h3>Need a domestic ticket?</h3>
+        <p>Message or call with your travel date, passenger count, and preferred time — we’ll confirm and help you book quickly.</p>
+      </div>
+      <a href="tel:09442271234">&#128222; Call for booking</a>
+    </div>
+  </div>
+</body>
+</html>

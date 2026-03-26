@@ -146,6 +146,86 @@
   .bus-cta-area { background: linear-gradient(135deg, var(--green-dark), var(--green)); border-radius: 20px; padding: 2.5rem; color: white; position: sticky; top: 90px; }
   .bus-cta-area h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.75rem; }
   .bus-cta-area p { opacity: 0.85; line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
+  .bus-admin {
+    margin-top: 1.4rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 1.1rem 1.1rem;
+  }
+  .bus-admin-top { display:flex; align-items:center; justify-content:space-between; gap: 10px; margin-bottom: 0.8rem; }
+  .bus-admin-top h4 { margin:0; font-size: 1rem; font-weight: 900; }
+  .bus-admin-pill {
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-weight: 900;
+    font-size: 0.85rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .bus-admin small { display:block; opacity: 0.85; margin-top: 6px; line-height: 1.5; }
+  .bus-admin-panel { display:none; margin-top: 0.9rem; }
+  .bus-admin-panel.open { display:block; }
+  .bus-admin-grid { display:grid; grid-template-columns: 1fr; gap: 10px; }
+  .bus-admin-grid label { font-size: 0.85rem; font-weight: 800; opacity: 0.92; }
+  .bus-admin-grid input, .bus-admin-grid select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.10);
+    color: white;
+    outline: none;
+  }
+  .bus-admin-grid input::placeholder { color: rgba(255,255,255,0.65); }
+  .bus-admin-actions { display:flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+  .bus-admin-btn {
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  .bus-admin-btn.primary { background: var(--orange); color: white; }
+  .bus-admin-btn.ghost { background: rgba(255,255,255,0.14); color: white; border: 1px solid rgba(255,255,255,0.18); }
+  .bus-admin-btn.danger { background: rgba(255,60,60,0.22); color: white; border: 1px solid rgba(255,60,60,0.25); }
+  .bus-admin-status {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    opacity: 0.92;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  .bus-admin-status code { background: rgba(0,0,0,0.22); padding: 2px 6px; border-radius: 8px; }
+  .bus-edit-row { display:flex; align-items:center; gap: 10px; }
+  .bus-edit-row input {
+    flex: 0 0 150px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: var(--text);
+    font-weight: 800;
+  }
+  .bus-edit-row button {
+    border: 0;
+    background: var(--orange);
+    color: white;
+    font-weight: 900;
+    border-radius: 999px;
+    padding: 7px 12px;
+    cursor: pointer;
+  }
+  .bus-edit-row button.secondary {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid #e0e0e0;
+    font-weight: 800;
+  }
+  .bus-muted-note { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
   .book-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: white; padding: 14px 30px; border-radius: 40px; font-size: 1rem; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; box-shadow: 0 6px 20px rgba(244,123,32,0.4); }
   .book-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
   .ev-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 1.2rem; margin-top: 1.5rem; }
@@ -154,17 +234,26 @@
 
   /* AIR TICKETS */
   #air { background: var(--cream); }
-  .air-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-  .air-services { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
-  .air-service-item { background: white; border-radius: 14px; padding: 1.2rem; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.06); transition: transform 0.3s; }
-  .air-service-item:hover { transform: translateY(-4px); }
-  .air-service-icon { width: 44px; height: 44px; min-width: 44px; background: linear-gradient(135deg, var(--green), var(--green-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-  .air-service-item span { font-size: 0.9rem; font-weight: 600; }
-  .air-img-block { position: relative; border-radius: 20px; overflow: hidden; height: 450px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-  .air-img-block img { width: 100%; height: 100%; object-fit: cover; }
-  .air-img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,107,58,0.3), transparent); }
-  .contact-booking-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--green); color: white; border: none; padding: 15px 32px; border-radius: 40px; font-size: 1rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: all 0.3s; box-shadow: 0 6px 25px rgba(26,107,58,0.4); }
-  .contact-booking-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+  .air-header { text-align: center; margin-bottom: 3.5rem; }
+  .air-header .section-desc { margin: 0 auto; }
+  .air-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+  .air-card { border-radius: 20px; overflow: hidden; background: white; box-shadow: 0 4px 30px rgba(0,0,0,0.08); transition: transform 0.4s, box-shadow 0.4s; }
+  .air-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+  .air-card-img { height: 260px; overflow: hidden; position: relative; }
+  .air-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+  .air-card:hover .air-card-img img { transform: scale(1.08); }
+  .air-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 65%); }
+  .air-card-badge { position: absolute; top: 16px; left: 16px; background: var(--orange); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+  .air-card-body { padding: 1.8rem; }
+  .air-card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; margin-bottom: 0.6rem; }
+  .air-card-body p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1.3rem; font-size: 0.95rem; }
+  .air-features { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem; }
+  .air-feature { display: inline-flex; align-items: center; gap: 8px; background: #e8f5ee; color: var(--green-dark); padding: 8px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
+  .air-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .air-see-more { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: white; border: none; padding: 12px 26px; border-radius: 30px; font-size: 0.92rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+  .air-see-more:hover { background: var(--green-light); }
+  .air-contact { display: inline-flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: 700; font-size: 0.92rem; }
+  .air-contact:hover { color: var(--green); }
 
   /* SERVICES */
   #services { background: var(--green-dark); }
@@ -245,13 +334,20 @@
     .plan-cards-grid { grid-template-columns: 1fr 1fr; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .msg-buttons { position: static; }
+    .air-cards-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .hero-content { padding: 0 6%; }
+    #home { min-height: 560px; }
+    .hero-content { padding: 0 6%; max-width: none; }
+    .hero-title { font-size: clamp(2.2rem, 9vw, 3.3rem); }
+    .hero-sub { font-size: 0.98rem; margin-bottom: 1.6rem; }
+    .hero-usps { margin-bottom: 1.6rem; gap: 10px; }
+    .usp-tag { width: 100%; justify-content: center; }
+    .hero-btn { width: 100%; justify-content: center; padding: 14px 22px; }
+    .hero-scroll { bottom: 1.4rem; }
     .footer-grid { grid-template-columns: 1fr; }
-    .air-services { grid-template-columns: 1fr; }
     .plan-cards-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .subpage-content { padding: 2rem 6% 4rem; }
@@ -481,15 +577,17 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Explore <span class="accent">Myanmar</span><br>With Us</h1>
-    <p class="hero-sub">Tour Packages; Customized Corporate Group Tour; Hiking Gear Rental; Car Rental; Hotel Booking; Travel Insurance; Air Ticket; Car Ticket </p>
+    <p class="hero-sub"> The only one in Myanmar that offer both Adventure and Relaxing trips with Customized Packages </p>
     <div class="hero-usps">
-      <div class="usp-tag"><div class="dot"></div>Trusted Travel Agency</div>
-      <div class="usp-tag"><div class="dot"></div>Best Price Guarantee</div>
-      <div class="usp-tag"><div class="dot"></div>Easy Booking</div>
-      <div class="usp-tag"><div class="dot"></div>Professional Service</div>
-      <div class="usp-tag"><div class="dot"></div>Full Adventure Activity</div>
+      <div class="usp-tag"><div class="dot"></div>Tour Packages</div>
+      <div class="usp-tag"><div class="dot"></div>Customized Corporate Group Tour</div>
+      <div class="usp-tag"><div class="dot"></div>Hiking Gear Rental</div>
+      <div class="usp-tag"><div class="dot"></div>Car Rental</div>
+      <div class="usp-tag"><div class="dot"></div>Hotel Booking</div>
+      <div class="usp-tag"><div class="dot"></div>Travel Insurance</div>
+      <div class="usp-tag"><div class="dot"></div>Air Ticket</div>
+      <div class="usp-tag"><div class="dot"></div>Car Ticket</div>
     </div>
-    <a href="#trips" class="hero-btn">Explore Trips &#8594;</a>
   </div>
   <div class="hero-scroll" onclick="document.getElementById('trips').scrollIntoView({behavior:'smooth'})">
     <div class="scroll-dot">&#8595;</div>
@@ -500,8 +598,8 @@
 <section id="trips">
   <div class="trips-header">
     <div class="section-label">&#10022; Our Packages</div>
-    <h2 class="section-title">Choose Your Adventure</h2>
-    <p class="section-desc">Whether you crave thrilling outdoor adventures or peaceful seaside retreats, we have the perfect trip waiting for you.</p>
+    <h2 class="section-title">Choose Your Trip Package</h2>
+    <p class="section-desc">The only one in Myanmar that offer both Adventure and Relaxing trips with Customized Packages</p>
   </div>
   <div class="trips-grid">
     <div class="trip-card">
@@ -512,8 +610,8 @@
       </div>
       <div class="trip-body">
         <h3>Adventure Trips</h3>
-        <p>Experience exciting adventures like trekking, hiking, island exploration and outdoor activities. Discover the wild beauty of Myanmar.</p>
-        <a href="adventure-trips.html" class="trip-btn">See More &#8594;</a>
+        <p>Customized Corporate Group Tour Packages strat with at least 6 peoples </p>
+          <a href="adventure-trips.html"  class="trip-btn">See More &#8594;</a>
       </div>
     </div>
     <div class="trip-card">
@@ -524,7 +622,7 @@
       </div>
       <div class="trip-body">
         <h3>Relaxing Trips</h3>
-        <p>Enjoy peaceful holidays with beach resorts, sunset views and relaxing travel experiences. Unwind in Myanmar's most serene destinations.</p>
+        <p>Customized Corporate Group Tour Packages strat with at least 2 peoples</p>
         <a href="relaxing-trips.html" class="trip-btn">See More &#8594;</a>
       </div>
     </div>
@@ -538,7 +636,15 @@
       <div class="section-label">&#128652; Book Your Seat</div>
       <h2 class="section-title">Bus Tickets</h2>
       <p class="section-desc" style="margin-bottom:2rem">We provide bus ticket booking services for all destinations across Myanmar (All Tickets).</p>
-      <div class="bus-routes">
+      <div id="busRoutesApp" class="bus-routes" aria-live="polite">
+        <div id="busRoutesLoading" class="route-card">
+          <div class="route-name">&#9203; Loading bus routes...</div>
+          <div class="route-prices">
+            <div class="route-price"><span>Please wait</span><span class="price-val">—</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="busRoutesFallback" class="bus-routes" style="display:none">
         <div class="route-card">
           <div class="route-name">&#128309; Chaungtha / Ngwe Saung (Standard)</div>
           <div class="route-prices">
@@ -591,28 +697,113 @@
         <h4>&#128663; Special EV Car Service — Brand New!</h4>
         <p>Travel to Chaungtha or Ngwe Saung in a brand-new electric car for up to 4 passengers. Door-to-door pickup included. Starting from <strong>49,000+ MMK</strong> depending on distance.</p>
       </div>
+
+      <div class="bus-admin">
+        <div class="bus-admin-top">
+          <h4>&#128295; Admin (Supabase)</h4>
+          <div id="busAdminToggle" class="bus-admin-pill" role="button" tabindex="0">&#9881; Open</div>
+        </div>
+        <div class="bus-admin-panel" id="busAdminPanel">
+          <div class="bus-admin-grid">
+            <div>
+              <label for="sbUrl">Supabase URL</label>
+              <input id="sbUrl" placeholder="https://xxxx.supabase.co" autocomplete="off" />
+            </div>
+            <div>
+              <label for="sbAnon">Supabase Anon key</label>
+              <input id="sbAnon" placeholder="eyJhbGciOi..." autocomplete="off" />
+              <small>Saved in this browser only (localStorage). Do not share publicly if you don’t want editing access.</small>
+            </div>
+            <div>
+              <label for="adminEmail">Admin email</label>
+              <input id="adminEmail" placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div>
+              <label for="adminPassword">Admin password</label>
+              <input id="adminPassword" type="password" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+          </div>
+          <div class="bus-admin-actions">
+            <button class="bus-admin-btn ghost" id="busAdminSaveConfig">Save Config</button>
+            <button class="bus-admin-btn primary" id="busAdminLogin">Login</button>
+            <button class="bus-admin-btn ghost" id="busAdminLogout">Logout</button>
+            <button class="bus-admin-btn ghost" id="busAdminRefresh">Refresh List</button>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="bus-admin-grid" style="grid-template-columns: 1fr;">
+              <div>
+                <label for="newRouteName">Add new place / route name</label>
+                <input id="newRouteName" placeholder="e.g., &#128309; Bagan (VIP) or Mandalay ↔ Yangon" autocomplete="off" />
+                <small>Tip: you can paste an emoji at the start (optional).</small>
+              </div>
+              <div class="bus-edit-row">
+                <input id="newRouteLabel" placeholder="Price label" style="flex: 1 1 auto" />
+                <input id="newRoutePrice" placeholder="MMK" inputmode="numeric" />
+              </div>
+            </div>
+            <div class="bus-admin-actions">
+              <button class="bus-admin-btn primary" id="busAdminAddRoute">Add Route + Price</button>
+            </div>
+            <small class="bus-muted-note">After login, you can edit each price inline in the list (Save/Cancel/Delete will appear).</small>
+          </div>
+
+          <div class="bus-admin-status" id="busAdminStatus">Status: <code>Not configured</code></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- AIR TICKETS -->
 <section id="air">
-  <div class="air-inner">
-    <div>
-      <div class="section-label">&#9992; Fly Anywhere</div>
-      <h2 class="section-title">International &amp; Domestic Air Tickets</h2>
-      <p class="section-desc">We help you book affordable flights worldwide with fast and reliable service. Domestic and international, we've got you covered.</p>
-      <div class="air-services">
-        <div class="air-service-item"><div class="air-service-icon">&#127760;</div><span>International Flights</span></div>
-        <div class="air-service-item"><div class="air-service-icon">&#128747;</div><span>Domestic Flights</span></div>
-        <div class="air-service-item"><div class="air-service-icon">&#128101;</div><span>Group Booking</span></div>
-        <div class="air-service-item"><div class="air-service-icon">&#129523;</div><span>Travel Assistance</span></div>
+  <div class="air-header">
+    <div class="section-label">&#9992; Air Tickets</div>
+    <h2 class="section-title">Domestic &amp; International Flights</h2>
+    <p class="section-desc">Two simple options. Choose your flight type, view example airlines first, then explore example destinations (you can polish later).</p>
+  </div>
+
+  <div class="air-cards-grid">
+    <div class="air-card">
+      <div class="air-card-img">
+        <img src="https://images.unsplash.com/photo-1521727857535-28d2048d8b02?w=1200&q=80" alt="Domestic Flights">
+        <div class="air-card-img-overlay"></div>
+        <div class="air-card-badge">&#128747; Domestic</div>
       </div>
-      <a href="tel:09442271234" class="contact-booking-btn">&#128222; Contact For Booking</a>
+      <div class="air-card-body">
+        <h3>Domestic Flights</h3>
+        <p>Fast booking support for flights inside Myanmar. See airlines first, then example cities/tourist places.</p>
+        <!-- <div class="air-features">
+          <div class="air-feature">&#128101; Group booking</div>
+          <div class="air-feature">&#9201; Quick confirmation</div>
+          <div class="air-feature">&#129523; Travel assistance</div>
+        </div> -->
+        <div class="air-card-actions">
+          <a class="air-see-more" href="domestic-flights.html">See more &#8594;</a>
+          <a class="air-contact" href="tel:09442271234">&#128222; Booking: 09775317000</a>
+        </div>
+      </div>
     </div>
-    <div class="air-img-block">
-      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80" alt="Air Travel">
-      <div class="air-img-overlay"></div>
+
+    <div class="air-card">
+      <div class="air-card-img">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80" alt="International Flights">
+        <div class="air-card-img-overlay"></div>
+        <div class="air-card-badge">&#127760; International</div>
+      </div>
+      <div class="air-card-body">
+        <h3>International Flights</h3>
+        <p>Affordable international ticket booking with reliable service. Airlines first, then example destinations.</p>
+        <!-- <div class="air-features">
+          <div class="air-feature">&#128640; Worldwide routes</div>
+          <div class="air-feature">&#128188; Business trips</div>
+          <div class="air-feature">&#129523; Travel assistance</div>
+        </div> -->
+        <div class="air-card-actions">
+          <a class="air-see-more" href="international-flights.html">See more &#8594;</a>
+          <a class="air-contact" href="tel:09442271234">&#128222; Booking: 09775317000</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -743,6 +934,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Hamburger
   const hamburger = document.getElementById('hamburger');
@@ -778,4 +970,436 @@
       if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.trip-card, .route-card, .service-card, .air-service-item').forEach(el);
+  document.querySelectorAll('.trip-card, .route-card, .service-card, .air-service-item').forEach(el => obs.observe(el));
+
+  // ----------------------------
+  // Supabase Bus Tickets (CRUD)
+  // ----------------------------
+
+  const LS_KEYS = {
+    url: 'neoGallant_supabaseUrl',
+    anon: 'neoGallant_supabaseAnon',
+  };
+
+  const elBus = {
+    routesApp: document.getElementById('busRoutesApp'),
+    routesFallback: document.getElementById('busRoutesFallback'),
+
+    adminToggle: document.getElementById('busAdminToggle'),
+    adminPanel: document.getElementById('busAdminPanel'),
+    adminStatus: document.getElementById('busAdminStatus'),
+
+    sbUrl: document.getElementById('sbUrl'),
+    sbAnon: document.getElementById('sbAnon'),
+    adminEmail: document.getElementById('adminEmail'),
+    adminPassword: document.getElementById('adminPassword'),
+    saveConfig: document.getElementById('busAdminSaveConfig'),
+    login: document.getElementById('busAdminLogin'),
+    logout: document.getElementById('busAdminLogout'),
+    refresh: document.getElementById('busAdminRefresh'),
+
+    newRouteName: document.getElementById('newRouteName'),
+    newRouteLabel: document.getElementById('newRouteLabel'),
+    newRoutePrice: document.getElementById('newRoutePrice'),
+    addRoute: document.getElementById('busAdminAddRoute'),
+  };
+
+  let sb = null;
+  let sbUser = null;
+
+  function escapeHtml(s) {
+    return String(s)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function setStatus(text) {
+    if (!elBus.adminStatus) return;
+    elBus.adminStatus.innerHTML = `Status: <code>${escapeHtml(text)}</code>`;
+  }
+
+  function parseMmk(input) {
+    const cleaned = String(input ?? '').replace(/[^\d]/g, '');
+    if (!cleaned) return null;
+    const n = Number(cleaned);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function formatMmk(n) {
+    try { return new Intl.NumberFormat('en-US').format(n) + ' MMK'; }
+    catch { return String(n) + ' MMK'; }
+  }
+
+  function getConfig() {
+    return {
+      url: localStorage.getItem(LS_KEYS.url) || '',
+      anon: localStorage.getItem(LS_KEYS.anon) || '',
+    };
+  }
+
+  function setConfig(url, anon) {
+    localStorage.setItem(LS_KEYS.url, url);
+    localStorage.setItem(LS_KEYS.anon, anon);
+  }
+
+  function initClientIfPossible() {
+    const { url, anon } = getConfig();
+    if (location.protocol === 'file:') {
+      setStatus('Open this page via http://localhost (not file://). Use VSCode Live Server or a local server, otherwise Supabase requests may fail.');
+    }
+    if (!window.supabase?.createClient) {
+      sb = null;
+      setStatus('Supabase library not loaded. Check internet connection or CDN blocked.');
+      return false;
+    }
+    if (!url || !anon) {
+      sb = null;
+      setStatus('Not configured (paste URL + anon key, then Save Config)');
+      return false;
+    }
+    try {
+      sb = window.supabase.createClient(url, anon);
+      setStatus('Configured (not logged in)');
+      return true;
+    } catch (e) {
+      sb = null;
+      setStatus('Config error: ' + (e?.message || String(e)));
+      return false;
+    }
+  }
+
+  function setAdminPanelOpen(open) {
+    if (!elBus.adminPanel) return;
+    elBus.adminPanel.classList.toggle('open', open);
+    if (elBus.adminToggle) elBus.adminToggle.textContent = open ? '✖ Close' : '⚙ Open';
+  }
+
+  async function refreshAuthState() {
+    if (!sb) return;
+    const { data, error } = await sb.auth.getUser();
+    if (error) {
+      sbUser = null;
+      setStatus('Configured (auth error: ' + (error.message || 'unknown') + ')');
+      return;
+    }
+    sbUser = data?.user || null;
+    setStatus(sbUser ? `Logged in as ${sbUser.email || sbUser.id}` : 'Configured (not logged in)');
+  }
+
+  function renderRoutes(routes, isEditable) {
+    if (!elBus.routesApp) return;
+    elBus.routesApp.innerHTML = '';
+
+    if (!routes?.length) {
+      elBus.routesApp.innerHTML = `
+        <div class="route-card">
+          <div class="route-name">No routes yet</div>
+          <div class="route-prices">
+            <div class="route-price"><span>Add routes from Admin panel</span><span class="price-val">—</span></div>
+          </div>
+        </div>`;
+      return;
+    }
+
+    for (const r of routes) {
+      const card = document.createElement('div');
+      card.className = 'route-card';
+
+      const title = document.createElement('div');
+      title.className = 'route-name';
+      title.textContent = r.name;
+
+      const pricesWrap = document.createElement('div');
+      pricesWrap.className = 'route-prices';
+
+      for (const p of (r.prices || [])) {
+        const row = document.createElement('div');
+        row.className = 'route-price';
+
+        const label = document.createElement('span');
+        label.textContent = p.label;
+
+        const val = document.createElement('span');
+        val.className = 'price-val';
+        val.textContent = formatMmk(p.price_mmk);
+
+        row.appendChild(label);
+        row.appendChild(val);
+
+        if (isEditable) {
+          row.style.gap = '10px';
+          row.style.alignItems = 'center';
+
+          const editWrap = document.createElement('div');
+          editWrap.className = 'bus-edit-row';
+          editWrap.style.marginLeft = 'auto';
+
+          const input = document.createElement('input');
+          input.value = String(p.price_mmk);
+          input.inputMode = 'numeric';
+
+          const saveBtn = document.createElement('button');
+          saveBtn.textContent = 'Save';
+
+          const cancelBtn = document.createElement('button');
+          cancelBtn.textContent = 'Cancel';
+          cancelBtn.className = 'secondary';
+
+          const delBtn = document.createElement('button');
+          delBtn.textContent = 'Delete';
+          delBtn.className = 'secondary';
+
+          const original = String(p.price_mmk);
+
+          cancelBtn.addEventListener('click', () => { input.value = original; });
+          saveBtn.addEventListener('click', async () => {
+            const next = parseMmk(input.value);
+            if (next == null) { alert('Please enter MMK number.'); return; }
+            saveBtn.disabled = true;
+            try {
+              const { error } = await sb
+                .from('bus_route_prices')
+                .update({ price_mmk: next })
+                .eq('id', p.id);
+              if (error) throw error;
+              await loadAndRender();
+            } catch (e) {
+              alert('Save failed: ' + (e?.message || String(e)));
+            } finally {
+              saveBtn.disabled = false;
+            }
+          });
+
+          delBtn.addEventListener('click', async () => {
+            if (!confirm('Delete this price row?')) return;
+            delBtn.disabled = true;
+            try {
+              const { error } = await sb.from('bus_route_prices').delete().eq('id', p.id);
+              if (error) throw error;
+              await loadAndRender();
+            } catch (e) {
+              alert('Delete failed: ' + (e?.message || String(e)));
+            } finally {
+              delBtn.disabled = false;
+            }
+          });
+
+          editWrap.appendChild(input);
+          editWrap.appendChild(saveBtn);
+          editWrap.appendChild(cancelBtn);
+          editWrap.appendChild(delBtn);
+
+          row.appendChild(editWrap);
+        }
+
+        pricesWrap.appendChild(row);
+      }
+
+      if (isEditable) {
+        const addRow = document.createElement('div');
+        addRow.className = 'route-price';
+        addRow.style.borderBottom = 'none';
+        addRow.style.paddingTop = '10px';
+
+        const left = document.createElement('span');
+        left.textContent = 'Add price row';
+
+        const right = document.createElement('div');
+        right.className = 'bus-edit-row';
+        right.style.marginLeft = 'auto';
+
+        const labelInput = document.createElement('input');
+        labelInput.placeholder = 'Label';
+        labelInput.style.flex = '1 1 auto';
+        labelInput.style.minWidth = '180px';
+
+        const priceInput = document.createElement('input');
+        priceInput.placeholder = 'MMK';
+        priceInput.inputMode = 'numeric';
+
+        const addBtn = document.createElement('button');
+        addBtn.textContent = 'Add';
+
+        addBtn.addEventListener('click', async () => {
+          const labelText = String(labelInput.value || '').trim();
+          const price = parseMmk(priceInput.value);
+          if (!labelText) { alert('Enter label.'); return; }
+          if (price == null) { alert('Enter MMK number.'); return; }
+          addBtn.disabled = true;
+          try {
+            const { error } = await sb.from('bus_route_prices').insert({
+              route_id: r.id,
+              label: labelText,
+              price_mmk: price,
+              sort: 1000,
+            });
+            if (error) throw error;
+            await loadAndRender();
+          } catch (e) {
+            alert('Add failed: ' + (e?.message || String(e)));
+          } finally {
+            addBtn.disabled = false;
+          }
+        });
+
+        right.appendChild(labelInput);
+        right.appendChild(priceInput);
+        right.appendChild(addBtn);
+
+        addRow.appendChild(left);
+        addRow.appendChild(right);
+        pricesWrap.appendChild(addRow);
+      }
+
+      card.appendChild(title);
+      card.appendChild(pricesWrap);
+      elBus.routesApp.appendChild(card);
+    }
+  }
+
+  async function loadRoutesFromSupabase() {
+    const { data: routes, error: rErr } = await sb
+      .from('bus_routes')
+      .select('id,name,sort,created_at')
+      .order('sort', { ascending: true })
+      .order('created_at', { ascending: true });
+    if (rErr) throw rErr;
+
+    const { data: prices, error: pErr } = await sb
+      .from('bus_route_prices')
+      .select('id,route_id,label,price_mmk,sort,created_at')
+      .order('sort', { ascending: true })
+      .order('created_at', { ascending: true });
+    if (pErr) throw pErr;
+
+    const byRoute = new Map();
+    for (const r of routes || []) byRoute.set(r.id, { ...r, prices: [] });
+    for (const p of prices || []) {
+      const rr = byRoute.get(p.route_id);
+      if (rr) rr.prices.push(p);
+    }
+    return Array.from(byRoute.values());
+  }
+
+  async function loadAndRender() {
+    if (!initClientIfPossible()) {
+      if (elBus.routesApp) elBus.routesApp.style.display = 'none';
+      if (elBus.routesFallback) elBus.routesFallback.style.display = '';
+      return;
+    }
+
+    if (elBus.routesApp) elBus.routesApp.style.display = '';
+    if (elBus.routesFallback) elBus.routesFallback.style.display = 'none';
+
+    try {
+      await refreshAuthState();
+      const routes = await loadRoutesFromSupabase();
+      const isEditable = !!sbUser;
+      renderRoutes(routes, isEditable);
+    } catch (e) {
+      setStatus('Load error: ' + (e?.message || String(e)));
+      if (elBus.routesFallback) elBus.routesFallback.style.display = '';
+    }
+  }
+
+  (function initAdminUi() {
+    const cfg = getConfig();
+    if (elBus.sbUrl) elBus.sbUrl.value = cfg.url;
+    if (elBus.sbAnon) elBus.sbAnon.value = cfg.anon;
+
+    const toggle = () => setAdminPanelOpen(!elBus.adminPanel.classList.contains('open'));
+    if (elBus.adminToggle) {
+      elBus.adminToggle.addEventListener('click', toggle);
+      elBus.adminToggle.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); });
+    }
+
+    if (elBus.saveConfig) elBus.saveConfig.addEventListener('click', () => {
+      const url = String(elBus.sbUrl.value || '').trim();
+      const anon = String(elBus.sbAnon.value || '').trim();
+      setConfig(url, anon);
+      initClientIfPossible();
+      loadAndRender();
+    });
+
+    if (elBus.login) elBus.login.addEventListener('click', async () => {
+      if (!sb && !initClientIfPossible()) return;
+      const email = String(elBus.adminEmail.value || '').trim();
+      const password = String(elBus.adminPassword.value || '');
+      if (!email || !password) { alert('Enter admin email + password.'); return; }
+      elBus.login.disabled = true;
+      try {
+        const { error } = await sb.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        await loadAndRender();
+      } catch (e) {
+        alert('Login failed: ' + (e?.message || String(e)));
+      } finally {
+        elBus.login.disabled = false;
+      }
+    });
+
+    if (elBus.logout) elBus.logout.addEventListener('click', async () => {
+      if (!sb && !initClientIfPossible()) return;
+      elBus.logout.disabled = true;
+      try {
+        await sb.auth.signOut();
+        await loadAndRender();
+      } catch (e) {
+        alert('Logout failed: ' + (e?.message || String(e)));
+      } finally {
+        elBus.logout.disabled = false;
+      }
+    });
+
+    if (elBus.refresh) elBus.refresh.addEventListener('click', async () => {
+      await loadAndRender();
+    });
+
+    if (elBus.addRoute) elBus.addRoute.addEventListener('click', async () => {
+      if (!sb && !initClientIfPossible()) return;
+      await refreshAuthState();
+      if (!sbUser) { alert('Login first to add routes.'); return; }
+
+      const name = String(elBus.newRouteName.value || '').trim();
+      const label = String(elBus.newRouteLabel.value || '').trim();
+      const price = parseMmk(elBus.newRoutePrice.value);
+      if (!name) { alert('Enter route name.'); return; }
+      if (!label) { alert('Enter price label.'); return; }
+      if (price == null) { alert('Enter MMK number.'); return; }
+
+      elBus.addRoute.disabled = true;
+      try {
+        const { data: rData, error: rErr } = await sb
+          .from('bus_routes')
+          .insert({ name, sort: 1000 })
+          .select('id')
+          .single();
+        if (rErr) throw rErr;
+
+        const { error: pErr } = await sb.from('bus_route_prices').insert({
+          route_id: rData.id,
+          label,
+          price_mmk: price,
+          sort: 10,
+        });
+        if (pErr) throw pErr;
+
+        elBus.newRouteName.value = '';
+        elBus.newRouteLabel.value = '';
+        elBus.newRoutePrice.value = '';
+        await loadAndRender();
+      } catch (e) {
+        alert('Add route failed: ' + (e?.message || String(e)));
+      } finally {
+        elBus.addRoute.disabled = false;
+      }
+    });
+  })();
+
+  loadAndRender();
+</script>
+</body>
+</html>
